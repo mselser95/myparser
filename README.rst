@@ -1,3 +1,8 @@
+.. image:: https://readthedocs.org/projects/myparser/badge/?version=latest
+   :target: https://myparser.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+
 Installation
 -----------------
 
