@@ -2,6 +2,8 @@
    :target: https://myparser.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
+.. image:: https://travis-ci.org/mselser95/myparser.svg?branch=master
+   :target: https://travis-ci.org/mselser95/myparser
 
 Installation
 -----------------
