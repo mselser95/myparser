@@ -5,6 +5,9 @@
 .. image:: https://travis-ci.org/mselser95/myparser.svg?branch=master
    :target: https://travis-ci.org/mselser95/myparser
 
+.. image:: https://coveralls.io/repos/github/mselser95/myparser/badge.svg?branch=master
+   :target: https://coveralls.io/github/mselser95/myparser?branch=master
+
 Installation
 -----------------
 
