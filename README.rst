@@ -1,21 +1,43 @@
-Run in project root:
+Installation
+-----------------
 
-    isort .
+To install this package, run:
 
-    black .
+    pip install -r requirements.txt
 
-To sort imports and reformat file using PEP8
 
-To build documentation:
+Encode
+-----------------
 
-    sphinx-quickstart
+This example allows to generate an encoded file to test the substring count. Usage:
 
-build and source must be in different folders (use default), and select to include modules in quickstart
+    python3 examples/encode.py
 
-    sphinx-apidoc -f -o source ../src/[PROJECT_NAME]/
 
-    make html
+Count
+-----------------
+The input parameters were defined as follows:
 
-Documentation must be inside the [PROJECT_NAME] folder within src.
+- file: the path to the file to be checked
 
-Then, in the conf.py file change the theme to "spinx_rtd_theme"
+- encoding: the file encoding. Should be: Should be  utf_32, utf_32_be, utf_32_le, utf_16, utf_16_be, utf_16_le, utf_7, utf_8 or utf_8_sig
+
+- minlen: the minimum number of characters of the substrings
+
+
+To get the usage help, input
+
+    python3 examples/count.py -h
+
+Then,
+
+    python3 examples/count.py --file [path_to_file] --encoding [encoding] --minlen [min_lenght]
+
+Performance
+-----------------
+
+This example provides a simple time comparison between two different ways to do the same thing.
+
+To use:
+
+    python3 examples/performance

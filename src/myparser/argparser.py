@@ -1,19 +1,19 @@
 # !/usr/bin/env python
 # coding:utf-8
 """
-Name    : argparser.py
-Author  : Matias Selser
-Time    : 7/29/21 5:12 PM
-Desc    : Library that gets and processes the arguments given by the user
+Library that gets and processes the arguments given by the user
 """
 
 import argparse
 from os import path
 
+import myparser.encoding as encoding
+
 
 def get_args():
-    """
-    Function that reads the argument input. Returns the arguments
+    """Function that reads the argument input. Returns the arguments
+
+    :return: Object containing file path, encoding and min length
     :rtype: object
     """
     parser = argparse.ArgumentParser(
@@ -26,11 +26,18 @@ def get_args():
         "--file", type=str, required=True, help="Path to the file to process"
     )
     parser.add_argument(
-        "--len",
-        type=int,
+        "--encoding",
+        type=str,
         required=True,
-        help="Number of bytes of the encoding (1 for UTF-8, 2"
-        " for UTF-16, or 4 for UTF32)",
+        help="Encoding. Should be  utf_32,"
+        " utf_32_be,"
+        " utf_32_le,"
+        " utf_16,"
+        " utf_16_be,"
+        " utf_16_le,"
+        " utf_7,"
+        " utf_8 or"
+        " utf_8_sig",
     )
     parser.add_argument(
         "--minlen",
@@ -45,13 +52,13 @@ def get_args():
 
 
 def validate_args(decoding_args):
-    """
-    Function that verifies if the arguments values are valid
+    """Function that verifies if the arguments values are valid
+
+    :return: 'True' if ok else 'False'
     :rtype: bool
     """
-    encoding = [1, 2, 4]
-    if decoding_args.len <= 0 or decoding_args.len not in encoding:
-        raise Exception("len parameter incorrect, please check input")
+    if decoding_args.encoding not in encoding.ENCODING:
+        raise Exception("Encoding parameter incorrect, please check input")
 
     if decoding_args.minlen <= 0:
         raise Exception("minlen parameter incorrect, please check input")
